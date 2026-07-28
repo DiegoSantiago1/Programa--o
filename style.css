@@ -106,3 +106,9 @@ section{
     font-size: 20px;
     margin-bottom: 15px;
 }
+
+.currency-img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+}

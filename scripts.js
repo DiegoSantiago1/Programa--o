@@ -9,6 +9,7 @@ function convertValues() {
     console.log(currencySelect.value)
     const dolarToday = 5.2
     const euroToday = 6.2
+    const guaraniToday = 1.171
     const convertedValue = inputCurrencyValue / dolarToday
 
 
@@ -29,6 +30,13 @@ function convertValues() {
 
     }
 
+    if (currencySelect.value == "Guarani")
+        currencyValueConvert.innerHTML = new Intl.NumberFormat("es-PY", {
+        style: "currency",
+        currency: "PYG",
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    }).format(inputCurrencyValue / guaraniToday)
 
 
 
@@ -45,20 +53,27 @@ function convertValues() {
 
 }
 
-function changeCurrency (){
+function changeCurrency() {
     const currencyName = document.getElementById("currency-name")
     const currencyImage = document.querySelector(".currency-img")
 
 
-    if(currencySelect.value == "dolar"){
-    currencyName.innerHTML = "Dólar Americano"
-    currencyImage.src = "./assets/estados-unidos.png"
+    if (currencySelect.value == "dolar") {
+        currencyName.innerHTML = "Dólar Americano"
+        currencyImage.src = "./assets/estados-unidos.png"
 
     }
 
-    if(currencySelect.value == "euro"){
-    currencyName.innerHTML = "Euro"
-    currencyImage.src = "./assets/Euro.png"
+    if (currencySelect.value == "euro") {
+        currencyName.innerHTML = "Euro"
+        currencyImage.src = "./assets/Euro.png"
+
+    }
+
+
+    if (currencySelect.value == "Guarani") {
+        currencyName.innerHTML = "₲ Guarani"
+        currencyImage.src = "./assets/paraguai.png"
 
     }
 
